@@ -180,31 +180,31 @@ const Home: React.FC = () => {
                     <span className="w-2 h-2 rounded-full bg-kada-pink animate-pulse"></span>
                     <span className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-white">Featured Premiere</span>
                  </div>
-                 <h1 className="text-3xl md:text-6xl lg:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-br from-white via-white to-gray-400 drop-shadow-2xl leading-tight md:leading-none">
+                 <h1 className="text-3xl md:text-5xl lg:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-br from-white via-white to-gray-400 drop-shadow-2xl leading-tight md:leading-tight">
                      {activeSlide.title}
                  </h1>
-                 <div className="flex flex-wrap items-center justify-center md:justify-start gap-3 md:gap-4 text-xs md:text-sm font-semibold text-gray-300">
+                 <div className="flex flex-wrap items-center justify-center md:justify-start gap-2 md:gap-3 text-xs md:text-sm font-semibold text-gray-300">
                      <span className="text-kada-yellow">{activeSlide.year}</span>
                      <span className="w-1 h-1 rounded-full bg-gray-500"></span>
                      <span>{activeSlide.genre}</span>
                      <span className="w-1 h-1 rounded-full bg-gray-500"></span>
                      <span className="border border-gray-500 px-2 rounded text-[10px] md:text-xs">{activeSlide.rating}</span>
                  </div>
-                 <p className="text-sm md:text-lg text-gray-200 line-clamp-2 md:line-clamp-none max-w-xl mx-auto md:mx-0 drop-shadow-lg leading-relaxed">
+                 <p className="text-sm md:text-base text-gray-200 line-clamp-2 md:line-clamp-none max-w-xl mx-auto md:mx-0 drop-shadow-lg leading-relaxed">
                      {activeSlide.description}
                  </p>
-                 <div className="grid grid-cols-[1fr_1fr_auto] sm:flex sm:flex-row items-center justify-center md:justify-start gap-2 md:gap-4 pt-4 w-full max-w-md md:max-w-none mx-auto md:mx-0">
-                     <Link to={`/watch/${activeSlide.id}`} className="w-full group relative px-2 py-3 md:px-10 md:py-4 bg-white text-black rounded-full font-bold text-xs md:text-lg overflow-hidden shadow-[0_0_20px_rgba(255,255,255,0.3)] transition-all hover:scale-105 flex items-center justify-center">
+                 <div className="grid grid-cols-[1fr_1fr_auto] sm:flex sm:flex-row items-center justify-center md:justify-start gap-2 md:gap-3 pt-2 w-full max-w-md md:max-w-none mx-auto md:mx-0">
+                     <Link to={`/watch/${activeSlide.id}`} className="w-full group relative px-2 py-2 md:px-6 md:py-3 bg-white text-black rounded-full font-bold text-xs md:text-base overflow-hidden shadow-sm transition-all hover:scale-105 flex items-center justify-center">
                          <div className="absolute inset-0 bg-gradient-to-r from-kada-pink to-kada-yellow opacity-0 group-hover:opacity-100 transition-opacity"></div>
                          <div className="relative flex items-center justify-center gap-1.5 md:gap-2 group-hover:text-white transition-colors whitespace-nowrap">
-                            <PlayIcon className="w-4 h-4 md:w-6 md:h-6 fill-current" /> <span>Watch Now</span>
+                            <PlayIcon className="w-4 h-4 md:w-5 md:h-5 fill-current" /> <span>Watch</span>
                          </div>
                      </Link>
-                     <Link to={`/title/${activeSlide.id}`} className="w-full px-2 py-3 md:px-10 md:py-4 glass-panel rounded-full font-bold text-xs md:text-lg hover:bg-white/10 transition-all flex items-center justify-center gap-1.5 md:gap-2 border border-white/20 whitespace-nowrap">
-                         <InfoIcon className="w-4 h-4 md:w-6 md:h-6" /> Details
+                     <Link to={`/title/${activeSlide.id}`} className="w-full px-2 py-2 md:px-6 md:py-3 glass-panel rounded-full font-bold text-xs md:text-base hover:bg-white/10 transition-all flex items-center justify-center gap-1.5 md:gap-2 border border-white/20 whitespace-nowrap">
+                         <InfoIcon className="w-4 h-4 md:w-5 md:h-5" /> Details
                      </Link>
-                     <button onClick={(e) => { e.preventDefault(); toggleMyList(activeSlide.id); }} className="w-11 h-11 md:w-14 md:h-14 rounded-full glass-panel flex items-center justify-center hover:bg-white/10 transition-colors border border-white/20 flex-shrink-0">
-                         {isInMyList(activeSlide.id) ? <CheckIcon className="w-5 h-5 md:w-6 md:h-6 text-white" /> : <PlusIcon className="w-5 h-5 md:w-6 md:h-6 text-white" />}
+                     <button onClick={(e) => { e.preventDefault(); toggleMyList(activeSlide.id); }} className="w-9 h-9 md:w-12 md:h-12 rounded-full glass-panel flex items-center justify-center hover:bg-white/10 transition-colors border border-white/20 flex-shrink-0">
+                         {isInMyList(activeSlide.id) ? <CheckIcon className="w-4 h-4 md:w-5 md:h-5 text-white" /> : <PlusIcon className="w-4 h-4 md:w-5 md:h-5 text-white" />}
                      </button>
                  </div>
             </div>

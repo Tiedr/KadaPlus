@@ -57,39 +57,29 @@ const LiveTV: React.FC = () => {
                             <div 
                                 key={channel.id} 
                                 onClick={() => handleChannelClick(channel.id)}
-                                className="group cursor-pointer bg-zinc-900 rounded-xl overflow-hidden border border-white/10 hover:border-kada-pink/50 transition-all duration-300 hover:-translate-y-1 shadow-lg"
+                                className="group cursor-pointer bg-zinc-950 rounded-lg overflow-hidden border border-white/5 hover:border-kada-pink/30 transition-all duration-300 hover:bg-zinc-900"
                             >
-                                {/* Thumbnail Area - Logo Focused */}
-                                <div className="relative aspect-video bg-white/5 p-6 flex items-center justify-center overflow-hidden">
-                                    <div className="absolute inset-0 bg-gradient-to-br from-black/20 to-black/80 z-0"></div>
+                                {/* Thumbnail Area */}
+                                <div className="relative aspect-video bg-zinc-900 flex items-center justify-center overflow-hidden">
                                     <img 
                                         src={channel.logoUrl} 
                                         alt={channel.name} 
-                                        className="relative z-10 w-2/3 h-2/3 object-contain drop-shadow-2xl transition-transform duration-500 group-hover:scale-110" 
+                                        className="relative z-10 w-1/2 h-1/2 object-contain transition-transform duration-500 group-hover:scale-105" 
                                     />
                                     
                                     {/* Live Badge */}
-                                    <div className="absolute top-3 left-3 z-20 flex items-center gap-1 bg-red-600 text-white text-[10px] font-bold px-2 py-0.5 rounded shadow-lg">
-                                        <div className="w-1.5 h-1.5 bg-white rounded-full animate-pulse"></div> LIVE
-                                    </div>
-
-                                    {/* Play Overlay */}
-                                    <div className="absolute inset-0 z-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/40 backdrop-blur-[1px]">
-                                        <div className="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center shadow-xl transform scale-50 group-hover:scale-100 transition-transform duration-300">
-                                            <PlayIcon className="w-6 h-6 ml-1" />
-                                        </div>
+                                    <div className="absolute top-2 left-2 z-20 flex items-center gap-1 bg-red-600/90 text-white text-[8px] font-bold px-1.5 py-0.5 rounded">
+                                        <div className="w-1 h-1 bg-white rounded-full animate-pulse"></div> LIVE
                                     </div>
                                 </div>
 
                                 {/* Details */}
-                                <div className="p-4 border-t border-white/5 bg-zinc-900 group-hover:bg-zinc-800 transition-colors">
-                                    <h3 className="text-white font-bold text-lg truncate group-hover:text-kada-pink transition-colors">{channel.name}</h3>
-                                    <p className="text-gray-400 text-xs font-medium truncate mt-1">{channel.currentProgram}</p>
-                                    <div className="flex items-center justify-between mt-3">
-                                        <span className="text-[10px] text-gray-500 uppercase border border-gray-700 px-1.5 py-0.5 rounded">{channel.category}</span>
-                                        <span className="text-[10px] text-gray-500 flex items-center gap-1">
-                                            <div className="w-1 h-1 rounded-full bg-gray-500"></div> {channel.viewers.toLocaleString()} watching
-                                        </span>
+                                <div className="p-3 border-t border-white/5">
+                                    <h3 className="text-white font-bold text-sm truncate group-hover:text-kada-pink transition-colors">{channel.name}</h3>
+                                    <p className="text-gray-500 text-[10px] truncate">{channel.currentProgram}</p>
+                                    <div className="flex items-center justify-between mt-2 pt-2 border-t border-white/5">
+                                        <span className="text-[9px] text-gray-600 uppercase font-mono tracking-wider">{channel.category}</span>
+                                        <span className="text-[9px] text-gray-600 font-mono tracking-wider">{channel.viewers.toLocaleString()}</span>
                                     </div>
                                 </div>
                             </div>
